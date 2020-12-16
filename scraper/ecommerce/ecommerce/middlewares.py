@@ -8,7 +8,7 @@ from scrapy import signals
 # useful for handling different item types with a single interface
 from itemadapter import is_item, ItemAdapter
 from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
-import random, logging
+import random, logging, time
 
 class UserAgentRotatorMiddleware(UserAgentMiddleware):
     user_agents_list = [
@@ -32,7 +32,8 @@ class UserAgentRotatorMiddleware(UserAgentMiddleware):
             self.user_agent = random.choice(self.user_agents_list)
             request.headers.setdefault('User-Agent',self.user_agent)
         except IndexError:
-            logging.error("Couldn't fetch the user agent!")
+            logging.basicConfig(format='%(asctime)s:%(levelname)s - %(message)s',level=logging.ERROR)
+            logging.error("Couldn't fetch the user agent")
 
 class EcommerceSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
