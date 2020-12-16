@@ -1,0 +1,230 @@
+{% extends "scrape_viz/base.html" %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'scrape_viz/css/weather_style.css' %}">
+{% endblock %}
+{% block page %}
+    <title>Visualization: Weather Forecast</title>
+{% endblock %}
+{% block title %}
+    <div class="logo">
+        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+            width="1280.000000pt" height="1061.000000pt" viewBox="0 0 1280.000000 1061.000000"
+            preserveAspectRatio="xMidYMid meet">
+            <metadata>
+                Created by potrace 1.15, written by Peter Selinger 2001-2017
+            </metadata>
+            <g transform="translate(0.000000,1061.000000) scale(0.100000,-0.100000)"
+                fill="#0d0c0c" stroke="none">
+                <path d="M5640 10603 c-1105 -77 -2079 -739 -2564 -1743 -162 -336 -265 -715
+                    -292 -1078 -6 -83 -9 -93 -28 -96 -12 -3 -64 -12 -116 -22 -390 -70 -762 -262
+                    -1054 -544 -186 -180 -311 -351 -427 -584 l-68 -138 -103 -35 c-489 -164 -849
+                    -571 -960 -1086 -31 -146 -31 -418 0 -564 135 -628 639 -1083 1274 -1152 65
+                    -7 701 -11 1898 -11 990 0 1800 -2 1800 -5 0 -3 -119 -244 -265 -535 -146
+                    -291 -265 -533 -265 -537 0 -5 182 -7 405 -5 323 2 405 0 404 -10 0 -7 -357
+                    -560 -793 -1228 -436 -668 -792 -1216 -791 -1218 3 -3 4163 2943 4183 2962 10
+                    10 -68 14 -385 19 -219 4 -523 7 -675 7 -153 0 -278 4 -278 8 0 4 113 128 250
+                    275 l250 266 1588 4 c1712 4 1639 2 1912 57 801 162 1497 672 1904 1394 490
+                    873 471 1958 -51 2824 -219 364 -563 713 -923 937 -282 176 -607 306 -920 368
+                    -236 47 -292 52 -580 51 -233 0 -295 -4 -409 -22 -310 -51 -583 -137 -841
+                    -267 l-88 -44 -68 125 c-266 495 -668 915 -1146 1200 -484 288 -1038 438
+                    -1588 432 -80 -1 -165 -3 -190 -5z m450 -1003 c297 -37 579 -134 830 -286 349
+                    -211 617 -503 796 -869 112 -228 137 -318 289 -1077 32 -159 62 -288 66 -288
+                    4 0 119 107 256 238 137 130 298 284 358 341 286 272 574 426 932 501 625 130
+                    1292 -92 1722 -573 158 -177 302 -426 374 -647 67 -204 82 -307 82 -565 0
+                    -201 -3 -244 -23 -344 -161 -795 -799 -1382 -1597 -1471 -72 -8 -1318 -10
+                    -4470 -8 l-4370 3 -67 32 c-91 43 -133 77 -185 147 -62 84 -87 171 -81 289 4
+                    79 9 102 38 162 44 91 123 171 215 216 l70 34 278 -2 c277 -1 277 -1 282 20 3
+                    12 25 122 50 244 61 303 104 415 221 573 218 296 600 467 961 430 54 -6 247
+                    -37 428 -69 182 -32 331 -55 333 -51 1 4 -21 173 -49 376 -50 350 -53 380 -53
+                    579 0 284 32 477 120 713 268 723 914 1243 1673 1347 119 16 407 19 521 5z"/>
+            </g>
+        </svg>
+
+    </div>
+    <h3>Weather Forecast Data</h3>
+    <div id="details">
+        A collection of forecasted weather data 
+        from the past 10 days visualized and represented.
+    </div>
+{% endblock %}
+{% block content %}
+    <div class="content">
+        <div class="data_title">Scraped Data Sample</div>
+        <div class="slider-arrows">
+            <div class="slider-arrows_prev">
+
+            </div>
+        </div>
+        <div class="slider">
+            <div class="slick-list">
+                <div class="slick-track">
+                    <div class="sample_slider-item">
+                        <a href="#">
+                            <div class="weather-gradient"></div>
+                            <div class="date-container">
+                                <h2 id="date-dayname">Tuesday</h2>
+                                <span id="date-day">15 Dec 2020</span>
+                                <i class="fas fa-map-marker-alt" id="location-icon"></i><span id="location">Butuan City</span>
+                            </div>
+                            <div class="weather-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36">
+                                    </line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22">
+                                    </line>
+                                </svg>
+                                <h1 id="weather-temp">29°C</h1>
+                                <h3 id="weather-desc">Sunny</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sample_slider-item">
+                        <a href="#">
+                            <div class="weather-gradient"></div>
+                            <div class="date-container">
+                                <h2 id="date-dayname">Wednesday</h2>
+                                <span id="date-day">16 Dec 2020</span>
+                                <i class="fas fa-map-marker-alt" id="location-icon"></i><span id="location">Butuan City</span>
+                            </div>
+                            <div class="weather-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+                                    stroke-linejoin="round" class="feather feather-cloud-lightning">
+                                    <path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9"></path>
+                                    <polyline points="13 11 9 17 15 17 11 23"></polyline>
+                                </svg>
+                                <h1 id="weather-temp">25°C</h1>
+                                <h3 id="weather-desc">Stormy</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sample_slider-item">
+                        <a href="#">
+                            <div class="weather-gradient"></div>
+                            <div class="date-container">
+                                <h2 id="date-dayname">Thursday</h2>
+                                <span id="date-day">17 Dec 2020</span>
+                                <i class="fas fa-map-marker-alt" id="location-icon"></i><span id="location">Butuan City</span>
+                            </div>
+                            <div class="weather-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36">
+                                    </line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22">
+                                    </line>
+                                </svg>
+                                <h1 id="weather-temp">32°C</h1>
+                                <h3 id="weather-desc">Sunny</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sample_slider-item">
+                        <a href="#">
+                            <div class="weather-gradient"></div>
+                            <div class="date-container">
+                                <h2 id="date-dayname">Friday</h2>
+                                <span id="date-day">18 Dec 2020</span>
+                                <i class="fas fa-map-marker-alt" id="location-icon"></i><span id="location">Butuan City</span>
+                            </div>
+                            <div class="weather-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+                                    stroke-linejoin="round" class="feather feather-cloud-drizzle">
+                                    <line x1="8" y1="19" x2="8" y2="21"></line>
+                                    <line x1="8" y1="13" x2="8" y2="15"></line>
+                                    <line x1="16" y1="19" x2="16" y2="21"></line>
+                                    <line x1="16" y1="13" x2="16" y2="15"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="12" y1="15" x2="12" y2="17"></line>
+                                    <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path>
+                                </svg>
+                                <h1 id="weather-temp">30°C</h1>
+                                <h3 id="weather-desc">Drizzle</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sample_slider-item">
+                        <a href="#">
+                            <div class="weather-gradient"></div>
+                            <div class="date-container">
+                                <h2 id="date-dayname">Saturday</h2>
+                                <span id="date-day">19 Dec 2020</span>
+                                <i class="fas fa-map-marker-alt" id="location-icon"></i><span id="location">Butuan City</span>
+                            </div>
+                            <div class="weather-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+                                    stroke-linejoin="round" class="feather feather-cloud-rain">
+                                    <line x1="16" y1="13" x2="16" y2="21"></line>
+                                    <line x1="8" y1="13" x2="8" y2="21"></line>
+                                    <line x1="12" y1="15" x2="12" y2="23"></line>
+                                    <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path>
+                                </svg>
+                                <h1 id="weather-temp">29°C</h1>
+                                <h3 id="weather-desc">Heavy Rain</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="sample_slider-item">
+                        <a href="#">
+                            <div class="weather-gradient"></div>
+                            <div class="date-container">
+                                <h2 id="date-dayname">Sunday</h2>
+                                <span id="date-day">20 Dec 2020</span>
+                                <i class="fas fa-map-marker-alt" id="location-icon"></i><span id="location">Butuan City</span>
+                            </div>
+                            <div class="weather-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+                                    stroke-linejoin="round" class="feather feather-cloud">
+                                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                                </svg>
+                                <h1 id="weather-temp">27°C</h1>
+                                <h3 id="weather-desc">Cloudy</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block visualization %}
+    <div class="visualization">
+        <div id="info">
+            <div>
+                <h4>Scraped Data</h4>
+                <p id="head">15-day Weather Forecast</p>
+                <p id="url"><strong>Source: </strong><a href="#">https://sample.com</a></p>
+                <p id="pages"><strong>Total Pages: </strong><span id="num_pages">1</span></p>
+            </div>
+        </div>
+        <canvas id="chart_div" align="center">
+
+        </canvas>
+        <label for="chart_div">Fig 1. Change of Temperature</label>
+        <div id="analysis">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Quasi, sed nisi beatae recusandae, eum voluptates illum, 
+            aliquid et voluptatibus numquam facere! Laboriosam fugit 
+            nulla, iusto eaque veniam repellat perspiciatis rerum?
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script src="https://unpkg.com/scrollbooster@2/dist/scrollbooster.min.js"></script>
+    <script src="{% static 'scrape_viz/js/weather_charts_process.js' %}"></script>
+{% endblock %}

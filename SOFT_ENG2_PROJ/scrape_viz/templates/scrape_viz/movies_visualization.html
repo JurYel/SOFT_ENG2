@@ -1,0 +1,103 @@
+{% extends "scrape_viz/base.html" %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'scrape_viz/css/movies_style.css' %}">
+{% endblock %}
+{% block page %}
+    <title> Visualization: Movies</title>
+{% endblock %}
+{% block title %}
+    <div class="logo">
+        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+            width="1280.000000pt" height="977.000000pt" viewBox="0 0 1280.000000 977.000000"
+            preserveAspectRatio="xMidYMid meet">
+            <metadata>
+                Created by potrace 1.15, written by Peter Selinger 2001-2017
+            </metadata>
+            <g transform="translate(0.000000,977.000000) scale(0.100000,-0.100000)"
+                fill="#0d0c0c" stroke="none">
+                <path d="M6017 9748 c-8 -13 -202 -383 -432 -823 -230 -440 -422 -806 -428
+                    -812 -7 -10 176 -13 910 -13 l919 0 487 829 c268 456 487 832 487 835 0 3
+                    -434 6 -965 6 l-965 0 -13 -22z"/>
+                <path d="M8495 8953 c-235 -450 -432 -826 -437 -835 -8 -17 38 -18 894 -18
+                    l903 0 485 826 c267 455 487 830 488 835 2 5 -408 9 -951 9 l-954 0 -428 -817z"/>
+                <path d="M11691 9728 c-26 -61 -720 -1567 -737 -1600 l-15 -28 891 0 890 0 0
+                    835 0 835 -505 0 -506 0 -18 -42z"/>
+                <path d="M0 8920 l0 -820 2073 0 2072 0 445 812 c245 446 447 815 448 819 2 5
+                    -1130 9 -2517 9 l-2521 0 0 -820z"/>
+                <path d="M46 6833 c-3 -82 -9 -1475 -12 -3098 l-6 -2950 20 -87 c39 -162 111
+                    -288 231 -409 124 -125 266 -206 451 -257 l95 -27 5540 -3 c4078 -2 5561 0
+                    5620 8 399 57 721 341 796 704 18 88 19 201 19 3179 l0 3087 -6374 0 -6373 0
+                    -7 -147z m5444 -1946 c78 -25 2048 -929 2225 -1020 296 -153 372 -391 189
+                    -587 -96 -103 -29 -70 -2019 -985 -385 -177 -443 -196 -605 -196 -149 1 -246
+                    37 -341 128 -63 60 -117 158 -140 253 -11 44 -14 243 -14 1025 0 1062 -2 1018
+                    60 1150 76 160 201 248 375 263 96 9 176 0 270 -31z"/>
+            </g>
+        </svg>
+    </div>
+    <h3>Movies Data</h3>
+    <div id="details">
+        A collection of reviews and other metadata of specific blockbuster and/or indie films from 2017 to 2019.
+    </div>
+{% endblock %}
+{% block content %}
+    <div class="content">
+        <div class="data_title">Scraped Data Sample</div>
+        <div class="slider-arrows">
+            <div class="slider-arrows_prev">
+
+            </div>
+        </div>
+        <div class="slider">
+            <div class="slick-list">
+                <div class="slick-track">
+                    <div class="sample_slider-item">
+                        <a href="#"></a>
+                    </div>
+                    <div class="sample_slider-item">
+                        <a href="#"></a>
+                    </div>
+                    <div class="sample_slider-item">
+                        <a href="#"></a>
+                    </div>
+                    <div class="sample_slider-item">
+                        <a href="#"></a>
+                    </div>
+                    <div class="sample_slider-item">
+                        <a href="#"></a>
+                    </div>
+                    <div class="sample_slider-item">
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block visualization %}
+    <div class="visualization">
+        <div id="info">
+            <div>
+                <h4>Scraped Data</h4>
+                <p id="url"><strong>Source: </strong><a href="#">https://sample.com</a></p>
+                <p id="pages"><strong>Total Pages: </strong><span id="num_pages">72</span></p>
+                <p id="movies"><strong>Total Movies: </strong><span id="num_movies">3000</span></p>
+                <p id=""></p>
+            </div>
+        </div>
+        <div id="chart_div" align="center">
+            
+        </div>
+        <label for="chart_div">Fig 1. Gross Income over Votes</label>
+        <div id="analysis">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Quasi, sed nisi beatae recusandae, eum voluptates illum, 
+            aliquid et voluptatibus numquam facere! Laboriosam fugit 
+            nulla, iusto eaque veniam repellat perspiciatis rerum? 
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script src="https://unpkg.com/scrollbooster@2/dist/scrollbooster.min.js"></script>
+    <script src="{% static 'scrape_viz/js/movie_charts_process.js' %}"></script>
+{% endblock %}

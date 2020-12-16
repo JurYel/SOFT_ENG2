@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block styles %}{% endblock %}
+    {% block page %}{% endblock %}
+</head>
+<body>
+    {% block buffer %}{% endblock %}
+    <article id="blur">
+        <div class="container">
+            <header>
+                <a class="logo_link">
+                    <img src="{% static 'scrape_viz/icons/icons8_deviation_1.ico' %}" alt="developer logo" class="dev-logo">
+                    <span>shindevs</span>
+                </a>
+                <nav>
+                    <a href="#" class="hide-desktop">
+                        <img src="{% static 'scrape_viz/icons/icons8_circled_menu.ico' %}" alt="toggle menu" class="main-menu" id="main-menu">
+                        
+                    </a>
+                    <ul class="show-desktop hide-mobile" id="nav">
+                        <li id="exit" class="exit-btn hide-desktop">
+                            <a href="#"><i class="fas fa-times"></i></a>
+                        </li>
+                        <li><a href="{% url 'home-view' %}"><i class="fas fa-home"></i>home</a></li>
+                        <li><a href="#categories"><i class="fas fa-sliders-h"></i>services</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i>about</a></li>
+                        <li><a href="#developers"><i class="fas fa-envelope"></i>contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section class="title">
+                <center>
+                    {% block title %}
+                    {% endblock %}
+                </center>
+            </section>
+        </div>
+        <section class="blue-container">
+            <div class="container">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </section>
+        <section class="gray-container">
+            <div class="container">
+                {% block visualization %}
+                {% endblock %}
+            </div>
+        </section>
+        <footer>
+            <div class="footer-container">
+                <div class="container">
+                    <a href="#" class="logo_link">
+                        <img src="{% static 'scrape_viz/icons/icons8_deviation_1.ico' %}" alt="shindevs" class="dev-logo">
+                        <span>shindevs</span>
+                    </a>
+                    <p class="address">
+                        Butuan City, 8604<br>Philippines
+                    </p>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </article>
+    {% include "scrape_viz/js.html" %}
+    {% block scripts %}{% endblock %}
+</body>
+</html>
