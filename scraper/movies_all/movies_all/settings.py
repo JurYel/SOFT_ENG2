@@ -52,8 +52,12 @@ ROBOTSTXT_OBEY = True
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
-   'movies_all.middlewares.UserAgentRotatorMiddleware': 400
+   'movies_all.middlewares.UserAgentRotatorMiddleware': 400,
+   'rotating_proxies.middlewares.RotatingProxyMiddleware': 800,
+   'rotating_proxies.middlewares.BanDetectionMiddleware': 800
 }
+
+ROTATING_PROXY_LIST_PATH = 'proxies.txt'
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
