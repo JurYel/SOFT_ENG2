@@ -2,21 +2,28 @@ import scrapy
 from scrapy.loader import ItemLoader
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
-from ecommerce.items import LazadaItem
+from ecommerce.items import ZaloraItem
 import re
 
-class LazadaScrape(CrawlSpider):
-    name = "lazada"
-    allowed_domains = ['lazada.com']
-    start_urls = ['https://www.lazada.com.ph/catalog/?q=shoes']
-
-    rules = (
-        Rule(LinkExtractor(restrict_xpaths="//div[@class='c2prKC']"), callback='parse_item', follow=True)
-    )
+class ZaloraScrape(scrapy.Spider):
+    name = "zalora"
+    
+    def start_requests(self):
+        url = "https://www.zalora.com.ph/_c/v1/desktop/list_catalog_full?url=%2F\
+        shoes&sort=popularity&dir=desc&offset=0&limit=48&category_id=120&special_price=false&\
+        all_products=false&new_products=false&top_sellers=false&catalogtype=Main&lang=en&\
+        is_brunei=false&sort_formula=sum(product(0.2%2Cscore_simple_availability)\
+        %2Cproduct(0.0%2Cscore_novelty)%2Cproduct(0.8%2Cscore_product_boost)\
+        %2Cproduct(0.0%2Cscore_random)%2Cproduct(1.0%2Cscore_personalization))\
+        &search_suggest=false&enable_visual_sort=true&enable_filter_ads=true\
+        &compact_catalog_desktop=false&name_search=false&solr7_support=true\
+        &pick_for_you=false&learn_to_sort_catalog=false&user_query=shoes\
+        &is_multiple_source=true"
+        yield scrapy.Request(url=url,callback=self.parse)
 
     def parse(self,response):
         for product in response.selector.xpath("//div[@class='c2prKC']"):
-            loader = ItemLoader(item=LazadaItem(),selector=product,response=response)
+            loader = ItemLoader(item=ZaloraItem(),selector=product,response=response)
 
             loader.add_xpath('prod_name',".//div[@class='c16H9d']/a")
             loader.add_xpath('price',".//div[@class='c3gUW0']/span")
