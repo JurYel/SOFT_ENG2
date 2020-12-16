@@ -20,7 +20,7 @@ def shopee_ratings(value):
 
     return value
 
-class LazadaItem(scrapy.Item):
+class ZaloraItem(scrapy.Item):
     prod_name = scrapy.Field(
         input_processor = MapCompose(remove_tags),
         output_processor = TakeFirst()
