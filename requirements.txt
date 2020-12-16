@@ -34,6 +34,8 @@ pandas==1.1.5
 parsel==1.6.0
 Pillow==8.0.1
 pluggy==0.13.1
+pp-ez==0.2.0
+pprintpp==0.4.0
 Protego==0.1.16
 py @ file:///tmp/build/80754af9/py_1593446248552/work
 pyasn1==0.4.8
@@ -44,6 +46,7 @@ PyHamcrest @ file:///tmp/build/80754af9/pyhamcrest_1594390921726/work
 PyMySQL==0.10.1
 pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1606517880428/work
 pyparsing==2.4.7
+pyreadline==2.1
 pytest==0.0.0
 pytest-runner==5.2
 python-dateutil==2.8.1
@@ -53,11 +56,14 @@ queuelib==1.5.0
 regex==2020.11.13
 requests==2.25.0
 Scrapy @ file:///C:/ci/scrapy_1606864804541/work
+scrapy-crawlera==1.7.2
+scrapy-rotating-proxies==0.6.2
 service-identity @ file:///tmp/build/80754af9/service_identity_1592494375577/work
 six @ file:///C:/ci/six_1605187374963/work
 sqlparse==0.4.1
 toml @ file:///tmp/build/80754af9/toml_1592853716807/work
 Twisted==20.3.0
+typing==3.7.4.3
 urllib3==1.26.2
 w3lib==1.22.0
 wincertstore==0.2
