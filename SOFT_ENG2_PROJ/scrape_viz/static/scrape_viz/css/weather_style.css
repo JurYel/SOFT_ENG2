@@ -183,11 +183,12 @@ section.title{
     width: 60%;
     font-size: 16pt;
     color: #989898;
-    text-align: justify;
+    text-align: center;
     font-family: 'Formular', sans-serif;
     margin-bottom: 2em;
     padding: 25px;
     line-height: 1.6em;
+    letter-spacing: 0.1em;
 }
 
 .title #details span{
@@ -728,4 +729,53 @@ ul.footer-links li a{
     .title{
         height: 670px;
     }
+}
+footer #social-media-footer a .fa-facebook,
+footer #social-media-footer a .fa-twitter,
+footer #social-media-footer a .fa-instagram,
+footer #social-media-footer a .fa-youtube{
+    color:white;
+    transition: 0.5s;
+}
+
+footer #social-media-footer ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+}
+
+footer #social-media-footer ul li{
+    font-size: 48px;
+    padding: 16px;
+    transition: 0.4s;
+}
+
+footer #social-media-footer ul li:hover a .fa-youtube{
+    color: red;
+    z-index: 1;
+    transform: scale(1.10);
+    box-shadow: 0 25px 40px rgba(0,0,0,.5);
+}
+
+
+footer #social-media-footer ul li:hover a .fa-facebook{
+    color: #3b5998;
+    z-index: 1;
+    transform: scale(1.10);
+    box-shadow: 0 25px 40px rgba(0,0,0,.5);
+}
+
+footer #social-media-footer ul li:hover a .fa-twitter{
+    color: #1DA1F2;
+    z-index: 1;
+    transform: scale(1.10);
+    box-shadow: 0 25px 40px rgba(0,0,0,.5);
+}
+
+footer #social-media-footer ul li:hover a .fa-instagram{
+    color: lightpink;
+    z-index: 1;
+    transform: scale(1.10);
+    box-shadow: 0 25px 40px rgba(0,0,0,.5);
 }
