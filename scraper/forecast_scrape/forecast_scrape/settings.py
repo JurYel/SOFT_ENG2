@@ -57,7 +57,19 @@ DOWNLOADER_MIDDLEWARES = {
    'rotating_proxies.middlewares.BanDetectionMiddleware': 800
 }
 
-ROTATING_PROXY_LIST_PATH = 'proxies.txt'
+# ROTATING_PROXY_LIST_PATH = 'proxies.txt'
+ROTATING_PROXY_LIST = {
+   '78.138.131.248:3128',
+   '83.103.193.74:13192',
+   '161.202.226.194:8123',
+   '187.44.167.78:60786',
+   '149.202.222.94:3128',
+   '163.53.209.7:6666',
+   '54.38.33.2:80',
+   '190.145.200.126:53281',
+   '92.115.102.133:55443',
+   '180.250.12.10:80'
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
