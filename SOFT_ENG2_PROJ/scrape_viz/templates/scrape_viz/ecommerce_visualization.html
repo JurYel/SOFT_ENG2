@@ -6,6 +6,15 @@
 {% block page %}
     <title>Visualization: E-Commerce</title>
 {% endblock %}
+{% block buffer %}
+    <div id="buffer">
+        <h3>Specify Category</h3>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" autocomplete="off" name="search">
+        </form>
+    </div>
+{% endblock %}
 {% block title %}
     <div class="logo">
         <?xml version="1.0" standalone="no"?>
