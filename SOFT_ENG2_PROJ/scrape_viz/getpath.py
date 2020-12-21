@@ -5,12 +5,18 @@ import importlib.util
 
 print(os.getcwd())
 
+path = os.getcwd().split("SOFT_ENG2\\")[0]
+print(path)
+os.chdir(path)
 if os.getcwd().find('SOFT_ENG2') != -1:
+
     file_path = os.path.join(os.getcwd(), 'scraper/forecast_scraper/spiders/forecast.py')
     os.chdir(file_path)
     print(True)
     print(os.getcwd())
 else:
+    settings_path = os.path.join(os.getcwd(), "SOFT_ENG2\scraper\\forecast_scrape\\forecast_scrape\\")
+    os.environ.setdefault("SCRAPY_SETTINGS",os.path.join(settings_path, 'settings.py'))
     file_path = os.path.join(os.getcwd(), "SOFT_ENG2\scraper\\forecast_scrape\\forecast_scrape\spiders\\")
     os.chdir(file_path)
     print(False)
