@@ -23,19 +23,19 @@ class UserAgentRotatorMiddleware(UserAgentMiddleware):
         'Mozilla/5.0 (X11; CrOS x86_64 8172.45.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.64 Safari/537.36',
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9',
     ]
-    
-    def __init__(self,user_agent=''):
+
+    def __init__(self, user_agent=''):
         self.user_agent = user_agent
 
     def process_request(self, request, spider):
         try:
             self.user_agent = random.choice(self.user_agents_list)
-            request.headers.setdefault('User-Agent',self.user_agent)
+            request.headers.setdefault('User-Agent', self.user_agent)
         except IndexError:
-            logging.basicConfig(format='%(asctime)s:%(levelname)s - %(message)s',level=logging.ERROR)
-            logging.error("Couldn't fetch the user agent")
+            logging.basicConfig(format='%(asctime)s:%(levelname)s - %(message)s', level=logging.ERROR)
+            logging.error("Error fetching user-agent")
 
-class EcommerceSpiderMiddleware:
+class LazadaSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the spider middleware does not modify the
     # passed objects.
@@ -82,7 +82,7 @@ class EcommerceSpiderMiddleware:
         spider.logger.info('Spider opened: %s' % spider.name)
 
 
-class EcommerceDownloaderMiddleware:
+class LazadaDownloaderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.

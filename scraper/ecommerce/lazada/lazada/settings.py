@@ -1,4 +1,4 @@
-# Scrapy settings for ecommerce project
+# Scrapy settings for lazada project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'ecommerce'
+BOT_NAME = 'lazada'
 
-SPIDER_MODULES = ['ecommerce.spiders']
-NEWSPIDER_MODULE = 'ecommerce.spiders'
+SPIDER_MODULES = ['lazada.spiders']
+NEWSPIDER_MODULE = 'lazada.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
+#USER_AGENT = 'lazada (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,19 +45,35 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'ecommerce.middlewares.EcommerceSpiderMiddleware': 543,
+#    'lazada.middlewares.LazadaSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
-   'ecommerce.middlewares.UserAgentRotatorMiddleware': 400,
-   'rotating_proxies.middlewares.RotatingProxyMiddleware': 800,
-   'rotating_proxies.middlewares.BanDetectionMiddleware': 800
+   'lazada.middlewares.UserAgentRotatorMiddleware': 400,
 }
 
-ROTATING_PROXY_LIST_PATH = 'proxies.txt'
+# DOWNLOADER_MIDDLEWARE = {
+#     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+#     'lazada.middlewares.UserAgentRotatorMiddleware': 400,
+#     'rotating_proxies.middlewares.RotatingProxyMiddleware': 800,
+#     'rotating_proxies.middlewares.BanDetectionMiddleware': 800
+# }
+
+# ROTATING_PROXY_LIST = {
+#    '78.138.131.248:3128',
+#    '83.103.193.74:13192',
+#    '161.202.226.194:8123',
+#    '187.44.167.78:60786',
+#    '149.202.222.94:3128',
+#    '163.53.209.7:6666',
+#    '54.38.33.2:80',
+#    '190.145.200.126:53281',
+#    '92.115.102.133:55443',
+#    '180.250.12.10:80'
+# }
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -68,7 +84,7 @@ ROTATING_PROXY_LIST_PATH = 'proxies.txt'
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'ecommerce.pipelines.EcommercePipeline': 300,
+   'lazada.pipelines.LazadaPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
