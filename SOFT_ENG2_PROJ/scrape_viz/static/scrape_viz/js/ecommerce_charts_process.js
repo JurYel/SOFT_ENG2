@@ -8,7 +8,7 @@ $(document).ready(function(){
      });
 
      window.onload = function(e){
-         toggle();
+        //  toggle();
      }
 
      function toggle(){
