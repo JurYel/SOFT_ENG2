@@ -316,10 +316,13 @@ nav ul li:first-child a{
 @keyframes borderFx{
     from {
         box-shadow: none;
+        transform: scale(1);
+
     }
     to{ 
         box-shadow: 0 12px 8px 0 rgba(0,0,0,0.16);
         -webkit-box-shadow: 0 12px 8px 0 rgba(0,0,0,0.16);
+        transform: scale(1.10);
     }
 }
 
@@ -338,6 +341,7 @@ nav ul li:first-child a{
     margin-top: 10px;
 }
 
+
 figure{
     margin: 0;
     padding: 15px;
@@ -349,7 +353,7 @@ figcaption{
 }
 
 blockquote{
-    font-size: 1.3em;
+    font-size: 1.1em;
     line-height: 1.6em;
     font-weight: 500;
 }
@@ -359,6 +363,7 @@ blockquote{
     background: #f6f6f6;
     padding: 4em 0 2em;
     margin-top: -3%;
+    justify-content: center;
 }
 
 .gray-container ul li{
@@ -367,11 +372,20 @@ blockquote{
     height: auto;
 }
 
+.gray-container ul h3{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
 .gray-container ul li img{
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
     border-radius: 100%;
     margin: 15px;
+}
+
+.gray-container ul li img:hover{
+    animation: borderFx 0.5s forwards ease-in;
 }
 
 .footer{
@@ -430,11 +444,11 @@ a.logo_link span{
     margin-left: 10px;
 }
 
-.address{
+/* .address{
     margin-top: 1.2em;
-}
+} */
 
-ul.footer-links{
+/* ul.footer-links{
     margin: 1.2em auto;
 }
 
@@ -449,6 +463,36 @@ ul.footer-links li:first-child{
 ul.footer-links li a{
     color: #9d9d9d;
     font-size: .8em;
+} */
+
+#social-media-footer a i{
+    color:white;
+    z-index: 1;
+    transition: all 0.5s;
+}
+
+#social-media-footer ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+}
+
+footer #social-media-footer ul li i.fa-youtube:hover{
+    color: red;
+}
+
+
+footer #social-media-footer ul li i.fa-facebook:hover{
+    color: #3b5998;
+}
+
+footer #social-media-footer ul li i.fa-twitter:hover{
+    color: #1DA1F2;
+}
+
+footer #social-media-footer ul li i.fa-instagram:hover{
+    color: lightpink;
 }
 
 @media only screen and (min-width: 650px){
@@ -464,6 +508,12 @@ ul.footer-links li a{
     nav ul li a{
         border-top: 2px solid rgb(255,255,255,0.1);
         border-bottom: 2px solid rgb(36,41,44);
+    }
+
+    
+    #social-media-footer ul li i{
+        font-size: 36px;
+        margin: 10px;
     }
 }
 
@@ -481,6 +531,12 @@ ul.footer-links li a{
         border-top: 2px solid rgb(255,255,255,0.1);
         border-bottom: 2px solid rgb(36,41,44);
     }
+
+    #social-media-footer ul li i{
+        font-size: 40px;
+        margin: 12px;
+    }
+
 }
 
 @media only screen and (min-width: 1024px){
@@ -610,6 +666,9 @@ ul.footer-links li a{
         opacity: 0;
     }
 
-    
+    #social-media-footer ul li i{
+        font-size: 48px;
+        margin: 16px;
+    }
 
 }

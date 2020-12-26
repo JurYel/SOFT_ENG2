@@ -55,14 +55,15 @@ class MoviesAllScrape(scrapy.Spider):
             if movie.xpath(".//div[contains(@class,'ratings-metascore')]//span") is not None:
                 if movie.xpath(".//div[@class='ratings-bar']//strong") is not None:
                     if len(movie.xpath(".//p[@class='sort-num_votes-visible']/span[@name='nv']")) > 1:
-                        # if movie_title not in self.uniq_data:                            loader.add_xpath('title',".//h3[@class='lister-item-header']//a")
-                        loader.add_xpath('year',".//h3[@class='lister-item-header']//span[contains(@class,'lister-item-year')]")
-                        loader.add_xpath('ratings',".//div[@class='ratings-bar']//strong")
-                        loader.add_xpath('metascore',".//div[contains(@class,'ratings-metascore')]//span")
-                        loader.add_xpath('votes',".//p[@class='sort-num_votes-visible']/span[@name='nv'][1]/@data-value")
-                        loader.add_xpath('gross_income',".//p[@class='sort-num_votes-visible']/span[@name='nv'][2]/@data-value")
+                        if movie_title not in self.uniq_data:                            
+                            loader.add_xpath('title',".//h3[@class='lister-item-header']//a")
+                            loader.add_xpath('year',".//h3[@class='lister-item-header']//span[contains(@class,'lister-item-year')]")
+                            loader.add_xpath('ratings',".//div[@class='ratings-bar']//strong")
+                            loader.add_xpath('metascore',".//div[contains(@class,'ratings-metascore')]//span")
+                            loader.add_xpath('votes',".//p[@class='sort-num_votes-visible']/span[@name='nv'][1]/@data-value")
+                            loader.add_xpath('gross_income',".//p[@class='sort-num_votes-visible']/span[@name='nv'][2]/@data-value")
 
-                        self.uniq_data.add(movie_title)
-                        yield loader.load_item()
+                            self.uniq_data.add(movie_title)
+                            yield loader.load_item()
               
         

@@ -6,4 +6,16 @@ $(document).ready(function(){
         direction: 'horizontal',
         emulateScroll: true,
      });
+
+     window.onload = function(e){
+         toggle();
+     }
+
+     function toggle(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active');
+
+        var buffer = document.getElementById('buffer');
+        buffer.classList.toggle('active');
+    }
 });
