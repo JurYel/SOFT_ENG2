@@ -44,7 +44,7 @@ class MoviesAllPipeline:
     # Insert data records into the database (one item at a time)
     def process_item(self,item,spider):
         if any(item.values()):
-            sql = "INSERT INTO movies_all(title, year, ratings, metascore, votes, gross_income) VALUES(%s, %s, %s, %s, %s, %s)"
+            sql = "INSERT INTO movies(title, year, ratings, metascore, votes, gross_income) VALUES(%s, %s, %s, %s, %s, %s)"
             self.cursor.execute(sql,
                                 (
                                     item.get("title"),

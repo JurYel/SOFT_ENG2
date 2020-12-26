@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{% static 'scrape_viz/icons/icons8_deviation_1.ico' %}" />
     {% block styles %}{% endblock %}
     {% block page %}{% endblock %}
 </head>
@@ -26,10 +27,10 @@
                         <li id="exit" class="exit-btn hide-desktop">
                             <a href="#"><i class="fas fa-times"></i></a>
                         </li>
-                        <li><a href="{% url 'home-view' %}"><i class="fas fa-home"></i>home</a></li>
-                        <li><a href="#categories"><i class="fas fa-sliders-h"></i>services</a></li>
-                        <li><a href="#"><i class="fas fa-question-circle"></i>about</a></li>
-                        <li><a href="#developers"><i class="fas fa-envelope"></i>contact</a></li>
+                        <li><a href="{% url 'home-view' %}"><i class="fas fa-home"></i>Home</a></li>
+                        <li><a href="#categories"><i class="fas fa-sliders-h"></i>Services</a></li>
+                        <li><a href="#developers"><i class="fas fa-question-circle"></i>About</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i>Contact</a></li>
                     </ul>
                 </nav>
             </header>
@@ -54,18 +55,36 @@
         </section>
         <footer>
             <div class="footer-container">
-                <div class="container">
-                    <a href="#" class="logo_link">
-                        <img src="{% static 'scrape_viz/icons/icons8_deviation_1.ico' %}" alt="shindevs" class="dev-logo">
-                        <span>shindevs</span>
-                    </a>
-                    <p class="address">
-                        Butuan City, 8604<br>Philippines
+                <div id="contact" class="container">
+                    <h3>Want to know more? Follow us on:</h3>
+                    <div id="social-media-footer">
+                        <ul>
+                            <li>
+                                <a href="https://www.facebook.com/TheCollegehumor" target="_blank">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/TheCollegehumor" target="_blank">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/TheCollegehumor" target="_blank">
+                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/TheCollegehumor", target="_blank">
+                                    <i class="fa fa-youtube" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <p>
+                        This website is developed by Team Shindevs
                     </p>
-                    <ul class="footer-links">
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
+                    
                 </div>
             </div>
         </footer>

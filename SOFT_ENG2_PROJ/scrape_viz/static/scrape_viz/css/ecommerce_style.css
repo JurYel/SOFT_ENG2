@@ -49,14 +49,14 @@ article::-webkit-scrollbar-track{
     width: 600px;
     padding: 50px;
     box-shadow: 0 5px 30px rgba(0,0,0,0.30);
-    background: #fff;
+    background: #ecf0f3;
     z-index: 1000;
     visibility: hidden;
     opacity: 0;
     transition: 0.8s 1s ease;
     text-align: center;
     border-radius: 13px;
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Formular',sans-serif;
 }
 
 #buffer.active{
@@ -72,6 +72,43 @@ article::-webkit-scrollbar-track{
     margin-bottom: 2rem;
     color: #111;
 }
+
+#buffer input{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 18px;
+    color: #555;
+    padding: 15px 8px 15px 8px;
+}
+
+#buffer .specify{
+    margin-bottom: 10px;
+    border-radius: 25px;
+    box-shadow: inset 6px 6px 6px #cbced1,
+                inset -6px -6px 6px #fff;
+    display: inline-block;
+}
+
+#buffer .specify svg{
+    margin: 0 -3px -6px 18px;
+}
+
+.svg-icon {
+    width: 1.5em;
+    height: 1.5em;
+  }
+  
+  .svg-icon path,
+  .svg-icon polygon,
+  .svg-icon rect {
+    fill: rgb(65, 65, 65);;
+  }
+  
+  .svg-icon circle {
+    stroke: rgb(65, 65, 65);
+    stroke-width: 1.5;
+  }
 
 .container{
     text-align: center;
@@ -227,11 +264,12 @@ section.title{
     width: 60%;
     font-size: 16pt;
     color: #989898;
-    text-align: justify;
+    text-align: center;
     font-family: 'Formular', sans-serif;
     margin-bottom: 2em;
     padding: 25px;
     line-height: 1.6em;
+    letter-spacing: 0.1em;
 }
 
 .title #details span{
@@ -535,7 +573,7 @@ section.title{
     transform: skewY(-2deg);
 }
 
-.address{
+/* .address{
     margin-top: 1.2em;
 }
 
@@ -554,6 +592,36 @@ ul.footer-links li{
 ul.footer-links li a{
     color: #9d9d9d;
     font-size: .8em;
+} */
+
+#social-media-footer a i{
+    color:white;
+    z-index: 1;
+    transition: all 0.5s;
+}
+
+#social-media-footer ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+}
+
+footer #social-media-footer ul li i.fa-youtube:hover{
+    color: red;
+}
+
+
+footer #social-media-footer ul li i.fa-facebook:hover{
+    color: #3b5998;
+}
+
+footer #social-media-footer ul li i.fa-twitter:hover{
+    color: #1DA1F2;
+}
+
+footer #social-media-footer ul li i.fa-instagram:hover{
+    color: lightpink;
 }
 
 @media only screen and (min-width: 650px){
@@ -572,6 +640,11 @@ ul.footer-links li a{
 
     .title #details{
         width: 80%;
+    }
+
+    #social-media-footer ul li i{
+        font-size: 36px;
+        margin: 10px;
     }
 }
 
@@ -592,6 +665,11 @@ ul.footer-links li a{
 
     .title #details{
         width: 80%;
+    }
+
+    #social-media-footer ul li i{
+        font-size: 40px;
+        margin: 12px;
     }
 }
 
@@ -703,5 +781,10 @@ ul.footer-links li a{
 
     .title{
         height: 670px;
+    }
+
+    #social-media-footer ul li i{
+        font-size: 48px;
+        margin: 16px;
     }
 }

@@ -74,8 +74,6 @@ $(document).ready(function(){
             title: "Correlation of Gross Income and Votes",
             width: 800,
             height: 500,
-            // hAxis: {title: 'Votes', scaleType: 'log'},
-            // vAxis: {title: 'Gross Income',scaleType: 'log'},
             hAxis: {title: 'Votes', format: 'short'},
             vAxis: {title: 'Gross Income', format: 'short'},
             legend: {position: 'top'},
