@@ -1,8 +1,19 @@
 import scrapy
 from scrapy.loader import ItemLoader
 from scrapy.crawler import CrawlerProcess
-from forecast_scrape.items import ForecastScrapeItem
+# from forecast_scrape.items import ForecastScrapeItem
+import os
+import importlib.util
 import re
+print(os.getcwd())
+if os.getcwd().find('SOFT_ENG2') == -1:
+    file_path = os.path.join(os.getcwd(), "SOFT_ENG2\scraper\\forecast_scrape\\forecast_scrape\\")
+    os.chdir(file_path)
+    print(False)
+    print(os.getcwd())
+    spec = importlib.util.spec_from_file_location("items.py",os.path.join(file_path,'items.py'))
+    forecast = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(forecast)
 
 class ForecastScrape(scrapy.Spider):
     name = "forecast_scrape"
@@ -13,7 +24,7 @@ class ForecastScrape(scrapy.Spider):
 
     def parse(self,response):
         for period in response.selector.xpath("//details[@class='Disclosure--themeList--uBa5q']"):
-            loader = ItemLoader(item=ForecastScrapeItem(),selector=period,response=response)
+            loader = ItemLoader(item=forecast.ForecastScrapeItem(),selector=period,response=response)
             
             loader.add_xpath('night_period',".//h3[contains(text(),'Night')]//span")
             loader.add_xpath('day_period',".//h3[contains(text(),'Day')]//span")
