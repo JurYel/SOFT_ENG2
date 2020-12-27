@@ -32,8 +32,8 @@ $(document).ready(function(){
 
      for(var i = 0, j = jsonData.length; i < j; i++){
         day_period.push(jsonData[i]["day_period"]);
-        night_temp.push(jsonData[i]["night_temp"]);
-        day_temp.push(jsonData[i]["day_temp"]);
+        night_temp.push((parseFloat(jsonData[i]["night_temp"])));
+        day_temp.push((parseFloat(jsonData[i]["day_temp"])));
      }
 
      var lineChartData = {

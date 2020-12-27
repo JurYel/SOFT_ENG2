@@ -19,8 +19,7 @@ class MoviesAllScrape(scrapy.Spider):
         self.pages = [str(i) for i in range(1,11)]
         self.years_url = [str(i) for i in range(2000,2020)]
         self.uniq_data = set()
-
-        #Preparing the monitoring of the loop
+        
         self.start_time = time.time()
         self.num_requests = 0
         self.loaders = []

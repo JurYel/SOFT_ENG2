@@ -16,14 +16,17 @@ class HomeView(View):
 
 class MoviesVisualizationView(View):
     def get(self,request, *args, **kwargs):
+        home_page = False
         return render(request, 'scrape_viz/movies_visualization.html', {"home_page": home_page})
 
 class WeatherVisualizationView(View):
     def get(self,request, *args, **kwargs):
+        home_page = False
         return render(request, 'scrape_viz/weather_visualization.html', {"home_page": home_page})
 
 class EcommerceVisualizationView(View):
     def get(self, request, *args, **kwargs):
+        home_page = False
         return render(request, 'scrape_viz/ecommerce_visualization.html', {"home_page": home_page})
 
 class MoviesData(APIView):

@@ -1,7 +1,7 @@
 import scrapy
 from scrapy.loader import ItemLoader
 from scrapy.crawler import CrawlerProcess
-# from forecast_scrape.items import ForecastScrapeItem
+from forecast_scrape.items import ForecastScrapeItem
 import os
 import importlib.util
 import re

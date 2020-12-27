@@ -5,7 +5,6 @@ from .config import API_KEY
 
 class LazadaScrape(scrapy.Spider):
     name = "lazada"
-    # Next Page: li[title='Next Page'] a.ant-pagination-item-link
     def start_requests(self):
        url = "https://www.lazada.com.ph/catalog/?q=shoes"
        start_url = 'http://api.scraperapi.com/?api_key='+ API_KEY + '&url='+ url + '&render=true'
