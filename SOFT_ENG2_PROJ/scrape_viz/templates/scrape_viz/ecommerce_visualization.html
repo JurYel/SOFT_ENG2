@@ -107,8 +107,8 @@
     </div>
     <h3>E-Commerce Data</h3>
     <div id="details">
-        A visual representation and comparison of sales between a 
-        specific item from two E-Commerce platforms - Lazada and Shoppee.
+        A visual representation and comparison of sales of products in 
+        a specific category from two E-Commerce platforms - Lazada and Shoppee.
     </div>
 {% endblock %}
 {% block content %}
@@ -123,22 +123,64 @@
             <div class="slick-list">
                 <div class="slick-track">
                     <div class="sample_slider-item">
-                        <a href="#"></a>
+                        <a href="#">
+                            <div id="product"></div>
+                            <div id="product_details">
+                                <h3>Jackets</h3>
+                                <figcaption>Cargo Jackets for Men</figcaption>
+                                <span>₱419.00</span>
+                            </div>
+                        </a>
                     </div>
                     <div class="sample_slider-item">
-                        <a href="#"></a>
+                        <a href="#">
+                            <div id="product"></div>
+                            <div id="product_details">
+                                <h3>Laptops</h3>
+                                <figcaption style="font-size: 11pt;">FUNHOUSE Laptop N3450</figcaption>
+                                <span>₱15,999.00</span>
+                            </div>
+                        </a>
                     </div>
                     <div class="sample_slider-item">
-                        <a href="#"></a>
+                        <a href="#">
+                            <div id="product"></div>
+                            <div id="product_details">
+                                <h3>Jackets</h3>
+                                <figcaption style="font-size: 12pt;">Hoodie Jacket Outerwear</figcaption>
+                                <span>₱169.00</span>
+                            </div>
+                        </a>
                     </div>
                     <div class="sample_slider-item">
-                        <a href="#"></a>
+                        <a href="#">
+                            <div id="product"></div>
+                            <div id="product_details">
+                                <h3>Mouse</h3>
+                                <figcaption style="font-size: 10pt;">Logitech G102 Prodigy Mouse</figcaption>
+                                <span>₱199.00</span>
+                            </div>
+                        </a>
                     </div>
                     <div class="sample_slider-item">
-                        <a href="#"></a>
+                        <a href="#">
+                            <div id="product"></div>
+                            <div id="product_details">
+                                <h3>Laptops</h3>
+                                <figcaption>VOYO i7 Laptop</figcaption>
+                                <span>₱12,888.00</span>
+                            </div>
+                        </a>
                     </div>
                     <div class="sample_slider-item">
-                        <a href="#"></a>
+                        <a href="#">
+                            <div id="product"></div>
+                            <div id="product_details">
+                                <h3>Shoes</h3>
+                                <figcaption style="font-size: 11pt;">White Unisex Rubber Shoes</figcaption>
+                                <span>₱149.00</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -157,19 +199,45 @@
                 <p id=""></p>
             </div>
         </div>
-        <div id="chart_div" align="center">
+        <canvas id="chart_div" align="center">
             
-        </div>
-        <label for="chart_div">Fig 1. Gross Income over Votes</label>
+        </canvas>
+        <label for="chart_div">Fig 1. Lazada Prices vs Shopee Prices</label>
         <div id="analysis">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Quasi, sed nisi beatae recusandae, eum voluptates illum, 
-            aliquid et voluptatibus numquam facere! Laboriosam fugit 
-            nulla, iusto eaque veniam repellat perspiciatis rerum? 
+            <p>
+                The distribution of data from both sources shows a highly skewed 
+                distribution considering there are outliers among the product prices 
+                thus Log Transformation was used to make the visualization less skewed 
+                and get a visible difference between the two datasets. 
+            </p>
+            <br>
+            <p>
+                From the Linear Plot above, the prices of products of both ecommerce sites 
+                are nearly the same but you can slightly see that Lazada prices are a bit 
+                lower than the Shopee prices. The samples scraped are only 40 products 
+                each site, so we can not entirely conclude that the products in Lazada are 
+                cheaper than that in Shopee but from these samples we can say that products 
+                sold in Lazada are cheaper than products sold in Shopee.
+            </p>
         </div>
     </div>
 {% endblock %}
 {% block scripts %}
     <script src="https://unpkg.com/scrollbooster@2/dist/scrollbooster.min.js"></script>
     <script src="{% static 'scrape_viz/js/ecommerce_charts_process.js' %}"></script>
+    <script>
+        var menu = document.getElementById('main-menu');
+        var nav = document.getElementById('nav');
+        var exit = document.getElementById('exit');
+
+        menu.addEventListener('click', function(e){
+            nav.classList.toggle('hide-mobile');
+            e.preventDefault();
+        });
+
+        exit.addEventListener('click', function(e){
+            nav.classList.add('hide-mobile');
+            e.preventDefault();
+        });
+    </script>
 {% endblock %}

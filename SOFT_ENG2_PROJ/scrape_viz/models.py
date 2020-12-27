@@ -24,3 +24,17 @@ class Weather(models.Model):
 
     class Meta:
         db_table = "weather"
+
+class EcommerceLazada(models.Model):
+    prod_name = models.CharField(max_length=120)
+    price = models.CharField(max_length=10, default='0')
+
+    class Meta:
+        db_table = "lazada"
+
+class EcommerceShopee(models.Model):
+    prod_name = models.CharField(max_length=120)
+    price = models.CharField(max_length=10, default='0')
+
+    class Meta:
+        db_table = "shopee"

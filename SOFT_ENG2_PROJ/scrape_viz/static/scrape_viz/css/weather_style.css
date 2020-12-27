@@ -325,10 +325,6 @@ section.title{
     height: 100%;
     top: 0;
     left: 0;
-    /* background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%); */
-    /* background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%); */
-    /* background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%); */
-    /* background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%); */
     background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
     border-radius: 10px;
     opacity: 0.5;
@@ -700,7 +696,7 @@ footer #social-media-footer ul li i.fa-instagram:hover{
     nav ul li:nth-child(2):hover::before{
         content: "";
         position: absolute;
-        width: 65px;
+        width: 70px;
         height: 5px;
         top: 76px;
         margin-left: 1.7rem;
@@ -713,7 +709,7 @@ footer #social-media-footer ul li i.fa-instagram:hover{
        nav ul li:nth-child(3):hover::before{
         content: "";
         position: absolute;
-        width: 80px;
+        width: 85px;
         height: 5px;
         top: 76px;
         margin-left: 1.7rem;
@@ -726,7 +722,7 @@ footer #social-media-footer ul li i.fa-instagram:hover{
     nav ul li:nth-child(4):hover::before{
         content: "";
         position: absolute;
-        width: 62px;
+        width: 123px;
         height: 5px;
         top: 76px;
         margin-left: 1.7rem;
@@ -739,7 +735,7 @@ footer #social-media-footer ul li i.fa-instagram:hover{
     nav ul li:nth-child(5):hover::before{
         content: "";
         position: absolute;
-        width: 77px;
+        width: 80px;
         height: 5px;
         top: 76px;
         margin-left: 1.7rem;

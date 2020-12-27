@@ -106,6 +106,17 @@ DATABASES = {
             'init_command': "SET sql_mode ='STRICT_TRANS_TABLES'",
         },
     },
+    'ecommerce_db': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ecommerce_db',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode = 'STRICT_TRANS_TABLES'",
+        },
+    },
 }
 
 DATABASE_ROUTERS = ['database_routers.movies_db.MovieRouter','database_routers.weather_db.WeatherRouter']
