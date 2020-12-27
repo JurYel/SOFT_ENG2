@@ -1,29 +1,30 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.views import View
-from scrape_viz.models import Movie, Weather
-from scrape_viz.serializers import MovieSerializer, WeatherSerializer
+from scrape_viz.models import Movie, Weather, EcommerceLazada, EcommerceShopee
+from scrape_viz.serializers import MovieSerializer, WeatherSerializer, EcommerceLazadaSerializer, EcommerceShopeeSerializer
 from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 import os
 
+home_page = True
 class HomeView(View):
     def get(self,request, *args, **kwargs):
-        return render(request, 'scrape_viz/home.html')
+        return render(request, 'scrape_viz/home.html', {"home_page": home_page})
 
 class MoviesVisualizationView(View):
     def get(self,request, *args, **kwargs):
-        return render(request, 'scrape_viz/movies_visualization.html')
+        return render(request, 'scrape_viz/movies_visualization.html', {"home_page": home_page})
 
 class WeatherVisualizationView(View):
     def get(self,request, *args, **kwargs):
-        return render(request, 'scrape_viz/weather_visualization.html')
+        return render(request, 'scrape_viz/weather_visualization.html', {"home_page": home_page})
 
 class EcommerceVisualizationView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'scrape_viz/ecommerce_visualization.html')
+        return render(request, 'scrape_viz/ecommerce_visualization.html', {"home_page": home_page})
 
 class MoviesData(APIView):
     authentication_classes = []
@@ -98,6 +99,50 @@ class WeatherData(APIView):
                     if request.method == 'GET':
                         serializer = WeatherSerializer(weathers, many=True)
                         return Response(serializer.data)
+
+
+class EcommerceLazadaData(APIView):
+    authentication_classes = []
+    permission_classes = []
+
+    def get(self, request, pk=None, format=None):
+        if pk is None:
+            if request.method == 'GET':
+                products = EcommerceLazada.objects.using('ecommerce_db').all()
+                serializer = EcommerceLazadaSerializer(products, many=True)
+                return Response(serializer.data)
+
+        else:
+            try:
+                product = EcommerceLazada.objects.using('ecommerce_db').get(pk=pk)
+            except EcommerceLazada.DoesNotExist:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+
+            if request.method == 'GET':
+                serializer = EcommerceLazadaSerializer(product)
+                return Response(serializer.data)
+
+
+class EcommerceShopeeData(APIView):
+    authentication_classes = []
+    permission_classes = []
+
+    def get(self, request, pk=None, format=None):
+        if pk is None:
+            if request.method == 'GET':
+                products = EcommerceShopee.objects.using('ecommerce_db').all()
+                serializer = EcommerceShopeeSerializer(products, many=True)
+                return Response(serializer.data)
+
+        else:
+            try:
+                product = EcommerceShopee.objects.using('ecommerce_db').get(pk=pk)
+            except EcommerceShopee.DoesNotExist:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+
+            if request.method == 'GET':
+                serializer = EcommerceLazadaSerializer(product)
+                return Response(serializer.data)
 
 # def scrape_weather(request):
 #     scrapy_signal.send() # sender = ?

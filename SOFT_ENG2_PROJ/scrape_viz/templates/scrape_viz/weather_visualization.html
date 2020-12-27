@@ -228,4 +228,19 @@
 {% block scripts %}
     <script src="https://unpkg.com/scrollbooster@2/dist/scrollbooster.min.js"></script>
     <script src="{% static 'scrape_viz/js/weather_charts_process.js' %}"></script>
+    <script>
+        var menu = document.getElementById('main-menu');
+        var nav = document.getElementById('nav');
+        var exit = document.getElementById('exit');
+
+        menu.addEventListener('click', function(e){
+            nav.classList.toggle('hide-mobile');
+            e.preventDefault();
+        });
+
+        exit.addEventListener('click', function(e){
+            nav.classList.add('hide-mobile');
+            e.preventDefault();
+        });
+    </script>
 {% endblock %}

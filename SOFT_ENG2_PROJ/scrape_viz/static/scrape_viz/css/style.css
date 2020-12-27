@@ -6,6 +6,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 article{
     position: absolute;
     top: 0;
@@ -580,7 +584,7 @@ footer #social-media-footer ul li i.fa-instagram:hover{
     nav ul li:nth-child(2)::before{
         content: "";
         position: absolute;
-        width: 65px;
+        width: 70px;
         height: 5px;
         top: 76px;
         margin-left: 1.7rem;

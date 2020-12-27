@@ -28,9 +28,15 @@
                             <a href="#"><i class="fas fa-times"></i></a>
                         </li>
                         <li><a href="{% url 'home-view' %}"><i class="fas fa-home"></i>Home</a></li>
-                        <li><a href="#categories"><i class="fas fa-sliders-h"></i>Services</a></li>
-                        <li><a href="#developers"><i class="fas fa-question-circle"></i>About</a></li>
-                        <li><a href="#contact"><i class="fas fa-envelope"></i>Contact</a></li>
+                        {% if home_page %}
+                            <li><a href="#categories"><i class="fas fa-sliders-h"></i>Services</a></li>
+                            <li><a href="#developers"><i class="fas fa-question-circle"></i>About</a></li>
+                            <li><a href="#contact"><i class="fas fa-envelope"></i>Contact</a></li>
+                        {% else %}
+                            <li><a href="#data_samples"><i class="fas fa-sliders-h"></i>Samples</a></li>
+                            <li><a href="#visualization"><i class="fas fa-question-circle"></i>Visualization</a></li>
+                            <li><a href="#analysis"><i class="fas fa-envelope"></i>Analysis</a></li>
+                        {% endif %}
                     </ul>
                 </nav>
             </header>

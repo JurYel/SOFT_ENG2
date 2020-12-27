@@ -59,7 +59,8 @@
                 </div>
                 <h3>Movies Data</h3>
                 <p>
-                    A collection of reviews and other metadata of specific blockbuster and/or indie films from 2017 to 2019.
+                    A collection of reviews and other metadata of blockbuster and/or 
+                    indie films from 2017 to 2019 scraped, visualized and analysed.
                 </p>
             </li>
             <li onclick="toggle(); click_fired(this.id);" id="weather" data-aos="fade-up">
@@ -175,8 +176,8 @@
                 </div>
                 <h3>E-commerce Data</h3>
                 <p>
-                    A visual representation and comparison of sales between a 
-                    specific item from 2 E-commerce platforms - Lazada and Shoppee.
+                    A visual representation and comparison of sales of products in 
+                    a specific category from two E-Commerce platforms - Lazada and Shoppee.
                 </p>
             </li>
         </ul>
@@ -217,7 +218,6 @@
 {% block scripts %}
     <script src="{% static 'scrape_viz/cdn/typed.js-master/lib/typed.js' %}"></script>
     <script type="text/javascript">
-        
         var menu = document.getElementById('main-menu');
         var nav = document.getElementById('nav');
         var exit = document.getElementById('exit');
@@ -274,7 +274,5 @@
             var buffer = document.getElementById('buffer');
             buffer.classList.toggle('active');
         }
-        
-        
     </script>
 {% endblock %}

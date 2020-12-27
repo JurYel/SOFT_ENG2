@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     var endpoint = "/visualization/movies/data/"
     var jsonData = $.ajax({
         url: endpoint,
@@ -60,13 +61,12 @@ $(document).ready(function(){
             width: 800,
             height: 500,
             series: {
-                0: {axis: 'gross income'}
-                
+                1: {axis: 'gross income'}
             },
             axes: {
                 y: {
                     'gross income': {label: 'Gross Income'}
-                },
+                }
             }
         };
     

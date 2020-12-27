@@ -37,11 +37,12 @@
     </div>
     <h3>Movies Data</h3>
     <div id="details">
-        A collection of reviews and other metadata of specific blockbuster and/or indie films from 2017 to 2019.
+        A collection of reviews and other metadata of blockbuster and/or 
+        indie films from 2017 to 2019 scraped, visualized and analysed.
     </div>
 {% endblock %}
 {% block content %}
-    <div class="content">
+    <div class="content" id="data_samples">
         <div class="data_title">Scraped Data Sample</div>
         <div class="slider-arrows">
             <div class="slider-arrows_prev">
@@ -75,7 +76,7 @@
     </div>
 {% endblock %}
 {% block visualization %}
-    <div class="visualization">
+    <div class="visualization" id="visualization">
         <div id="info">
             <div>
                 <h4>Scraped Data</h4>
@@ -90,14 +91,51 @@
         </div>
         <label for="chart_div">Fig 1. Gross Income over Votes</label>
         <div id="analysis">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Quasi, sed nisi beatae recusandae, eum voluptates illum, 
-            aliquid et voluptatibus numquam facere! Laboriosam fugit 
-            nulla, iusto eaque veniam repellat perspiciatis rerum? 
+            <p>
+                The collected data contains outliers in the Gross Income as there are 
+                movies that generated large amounts of gross income from the populace. 
+                The normal distribution curve of the data presents a skewed distribution 
+                hence Log Transformation was used to resolve this issue to attain a visible 
+                correlation between Gross Income and Votes.
+            </p>
+            <br>
+            <p>
+                From the Scatter Plot above, if you draw a straight line along the collected dots 
+                you will find that the line will be slightly diagonal and tilted to the left, this 
+                representation shows the weak correlation where the linear association between the 
+                two variables are hardly observable. For a better view on the correlation, 
+                we used the Pearson Correlation formula to compute for the Correlation Coefficient 
+                which will determine the strength of linear relationship between the two quantitative 
+                variables.
+            </p>
+            <br>
+            <p>
+                The Pearson Correlation results to a 0.44 correlation coefficient which is the same as 
+                what was shown in scatter plot. This only shows a weak correlation between Gross Income 
+                and Votes. Therefore, in conclusion, Gross Income is dependent to the Votes and is 
+                directly proportional to each other. Most movie hosting or streaming sites are based 
+                on the votes a movie has for it to come out at the front page so the more votes a movie 
+                has then the more views it accumulates thus generating higher gross income.
+            </p>
         </div>
     </div>
 {% endblock %}
 {% block scripts %}
     <script src="https://unpkg.com/scrollbooster@2/dist/scrollbooster.min.js"></script>
     <script src="{% static 'scrape_viz/js/movie_charts_process.js' %}"></script>
+    <script>
+        var menu = document.getElementById('main-menu');
+        var nav = document.getElementById('nav');
+        var exit = document.getElementById('exit');
+
+        menu.addEventListener('click', function(e){
+            nav.classList.toggle('hide-mobile');
+            e.preventDefault();
+        });
+
+        exit.addEventListener('click', function(e){
+            nav.classList.add('hide-mobile');
+            e.preventDefault();
+        });
+    </script>
 {% endblock %}

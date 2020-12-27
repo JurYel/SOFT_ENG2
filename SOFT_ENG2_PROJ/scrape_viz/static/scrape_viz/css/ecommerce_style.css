@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
 @import url('//db.onlinewebfonts.com/c/0f106940a384f214837a8df504786e1a?family=Formular');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@600&family=Poppins&display=swap');
 
 *{
     margin: 0;
@@ -370,38 +372,40 @@ section.title{
     user-select: none;
 }
 
-.slick-track div:nth-child(n+2):nth-child(-n+6){
+.slick-track div.sample_slider-item:nth-child(n+2):nth-child(-n+6){
     margin-inline-start: 25px;
 }
 
-.content .slick-list .slick-track div{
+.content .slick-list .slick-track div.sample_slider-item{
     width: 280px;
     height: 100%;
     border-radius: 10px;
     padding: 0;
 }
 
-.slick-track div a{
+.slick-track div.sample_slider-item a{
     position: relative;
     top: 0;
     display: block;
     overflow: hidden;
     width: 100%;
     height: 100%;
+    background-color: #fff; 
     border-radius: 10px;
     box-shadow: 0 12px 8px 0 rgba(0,0,0,0.16);
     -webkit-box-shadow: 0 12px 8px 0 rgba(0,0,0,0.16);
+    text-decoration: none;
 }
 
-.slick-track div{
+.slick-track div.sample_slider-item{
     transition: transform 0.6s ease;
 }
 
-.slick-track div:hover{
+.slick-track div.sample_slider-item:hover{
     transform: translateY(-7px);
 }
 
-.slick-track div a{
+.slick-track div.sample_slider-item a{
     user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
@@ -409,49 +413,88 @@ section.title{
     -ms-user-select: none;
     cursor: grab;
 }
-/* 
-.slick-track div:nth-child(1) a{
-    background-image: url(../movies/dunkirk.jpg);
+
+.sample_slider-item #product{
+    display: block;
+    height: 250px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.sample_slider-item #product_details{
+    display: block;
+    height: calc(100% - 250px);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    line-height: 1.6em;
+    box-sizing: border-box;
+    padding: 10px 15px;
+}
+
+#product_details h3{
+    font-family: 'Poppins', sans-serif;
+    font-size: 11pt;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(94, 94, 94, 0.753);
+}
+
+#product_details figcaption{
+    font-size: 13pt;
+    letter-spacing: 0.1em;
+    text-transform: capitalize;
+    color: rgb(22, 22, 22);
+}
+
+#product_details span{
+    font-size: 12pt;
+    color: rgb(209, 15, 15);
+    font-family: 'Mukta', sans-serif;
+}
+
+.slick-track div.sample_slider-item:nth-child(1) div#product{
+    background-image: url(../img/ecommerce/jacket1.jfif);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.slick-track div:nth-child(2) a{
-    background-image: url(../movies/logan.jpg);
+.slick-track div.sample_slider-item:nth-child(2) div#product{
+    background-image: url(../img/ecommerce/laptop1.jfif);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.slick-track div:nth-child(3) a{
-    background-image: url(../movies/john\ wick\ 3.jpg);
+.slick-track div.sample_slider-item:nth-child(3) div#product{
+    background-image: url(../img/ecommerce/jacket2.jfif);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.slick-track div:nth-child(4) a{
-    background-image: url(../movies/it\ 2.jpg);
+.slick-track div.sample_slider-item:nth-child(4) div#product{
+    background-image: url(../img/ecommerce/mouse1.jfif);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.slick-track div:nth-child(5) a{
-    background-image: url(../movies/guardians\ of\ the\ galaxy\ vol\ 2.jpg);
+.slick-track div.sample_slider-item:nth-child(5) div#product{
+    background-image: url(../img/ecommerce/laptop2.jfif);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.slick-track div:nth-child(6) a{
-    background-image: url(../movies/money\ heist.jpg);
+.slick-track div.sample_slider-item:nth-child(6) div#product{
+    background-image: url(../img/ecommerce/shoes1.jfif);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 
-} */
+}
 
 
 .gray-container{
@@ -713,7 +756,7 @@ footer #social-media-footer ul li i.fa-instagram:hover{
     nav ul li:nth-child(2):hover::before{
         content: "";
         position: absolute;
-        width: 65px;
+        width: 70px;
         height: 5px;
         top: 76px;
         margin-left: 1.7rem;
@@ -726,7 +769,7 @@ footer #social-media-footer ul li i.fa-instagram:hover{
        nav ul li:nth-child(3):hover::before{
         content: "";
         position: absolute;
-        width: 80px;
+        width: 85px;
         height: 5px;
         top: 76px;
         margin-left: 1.7rem;
@@ -739,7 +782,7 @@ footer #social-media-footer ul li i.fa-instagram:hover{
     nav ul li:nth-child(4):hover::before{
         content: "";
         position: absolute;
-        width: 62px;
+        width: 123px;
         height: 5px;
         top: 76px;
         margin-left: 1.7rem;
@@ -752,7 +795,7 @@ footer #social-media-footer ul li i.fa-instagram:hover{
     nav ul li:nth-child(5):hover::before{
         content: "";
         position: absolute;
-        width: 77px;
+        width: 80px;
         height: 5px;
         top: 76px;
         margin-left: 1.7rem;
