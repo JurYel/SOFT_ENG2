@@ -55,9 +55,11 @@ pywin32==227
 queuelib==1.5.0
 regex==2020.11.13
 requests==2.25.0
+scipy==1.5.4
 Scrapy @ file:///C:/ci/scrapy_1606864804541/work
 scrapy-crawlera==1.7.2
 scrapy-rotating-proxies==0.6.2
+scrapy-splash==0.7.2
 service-identity @ file:///tmp/build/80754af9/service_identity_1592494375577/work
 six @ file:///C:/ci/six_1605187374963/work
 sqlparse==0.4.1
