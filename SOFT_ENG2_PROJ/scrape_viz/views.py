@@ -147,6 +147,3 @@ class EcommerceShopeeData(APIView):
                 serializer = EcommerceLazadaSerializer(product)
                 return Response(serializer.data)
 
-# def scrape_weather(request):
-#     scrapy_signal.send() # sender = ?
-#     return render()
