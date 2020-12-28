@@ -10,14 +10,12 @@ from scrapy.exceptions import DropItem, NotConfigured
 import MySQLdb
 
 class MoviesAllPipeline:
-    # Add database connection parameters in constructor
     def __init__(self,db,user,passwd,host):
         self.db = db
         self.user = user
         self.passwd = passwd
         self.host = host
 
-    # Implement from_crawler method and get database connection settings
     @classmethod
     def from_crawler(cls,crawler):
         db_settings = crawler.settings.getdict("DB_SETTINGS")
@@ -32,7 +30,6 @@ class MoviesAllPipeline:
 
         return cls(db,user,passwd,host)
 
-    # Establish database connection whens spider starts
     def open_spider(self,spider):
         self.conn = MySQLdb.connect(db=self.db,
                                 user=self.user,
@@ -41,7 +38,6 @@ class MoviesAllPipeline:
                                 charset='utf8',use_unicode=True)
         self.cursor = self.conn.cursor()
 
-    # Insert data records into the database (one item at a time)
     def process_item(self,item,spider):
         if any(item.values()):
             sql = "INSERT INTO movies(title, year, ratings, metascore, votes, gross_income) VALUES(%s, %s, %s, %s, %s, %s)"
@@ -59,6 +55,5 @@ class MoviesAllPipeline:
         else:
             raise DropItem(f"NULL Value found;")
 
-    # Stop database connection when spider closes
     def close_spider(self,spider):
         self.conn.close()
