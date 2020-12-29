@@ -7,7 +7,7 @@
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
 from scrapy.exceptions import DropItem, NotConfigured
-import MySQLdb
+import pymysql
 
 class MoviesAllPipeline:
     def __init__(self,db,user,passwd,host):
@@ -31,7 +31,7 @@ class MoviesAllPipeline:
         return cls(db,user,passwd,host)
 
     def open_spider(self,spider):
-        self.conn = MySQLdb.connect(db=self.db,
+        self.conn = pymysql.connect(db=self.db,
                                 user=self.user,
                                 passwd=self.passwd,
                                 host=self.host,

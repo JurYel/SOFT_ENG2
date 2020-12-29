@@ -6,7 +6,7 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-import MySQLdb
+import pymysql
 
 class LazadaPipeline:
     def __init__(self,db,user,passwd,host):
@@ -30,7 +30,7 @@ class LazadaPipeline:
         return cls(db,user,passwd,host)
 
     def open_spider(self,spider):
-        self.conn = MySQLdb.connect(db=self.db,
+        self.conn = pymysql.connect(db=self.db,
                                     user=self.user,
                                     passwd=self.passwd,
                                     host=self.host,

@@ -28,7 +28,6 @@ logging==0.4.9.6
 lxml @ file:///C:/ci/lxml_1606498900999/work
 matplotlib==3.3.3
 more-itertools @ file:///tmp/build/80754af9/more-itertools_1605111547926/work
-mysqlclient @ file:///C:/Users/jurie/Downloads/Installers/mysqlclient/mysqlclient-1.4.6-cp38-cp38-win_amd64.whl
 numpy==1.19.4
 packaging @ file:///tmp/build/80754af9/packaging_1606930849755/work
 pandas==1.1.5
