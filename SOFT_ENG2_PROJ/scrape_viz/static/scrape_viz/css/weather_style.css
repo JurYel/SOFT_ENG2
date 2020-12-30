@@ -311,7 +311,7 @@ section.title{
     border-radius: 10px;
     box-shadow: 0 12px 8px 0 rgba(0,0,0,0.16);
     -webkit-box-shadow: 0 12px 8px 0 rgba(0,0,0,0.16);
-    background-image: url(../img/new\ york4.jpg);
+    background-image: url(../img/new-york4.jpg);
     background-position: center center;
     background-size: cover;
     text-decoration: none;
@@ -395,50 +395,6 @@ section.title{
     -ms-user-select: none;
     cursor: grab;
 }
-/* 
-.slick-track div:nth-child(1) a{
-    background-image: url(../movies/dunkirk.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.slick-track div:nth-child(2) a{
-    background-image: url(../movies/logan.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.slick-track div:nth-child(3) a{
-    background-image: url(../movies/john\ wick\ 3.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.slick-track div:nth-child(4) a{
-    background-image: url(../movies/it\ 2.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.slick-track div:nth-child(5) a{
-    background-image: url(../movies/guardians\ of\ the\ galaxy\ vol\ 2.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.slick-track div:nth-child(6) a{
-    background-image: url(../movies/money\ heist.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-} */
-
 
 .gray-container{
     width: 100%;

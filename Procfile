@@ -1,0 +1,1 @@
+web: gunicorn SOFT_ENG2_PROJ.SOFT_ENG2_PROJ.wsgi
