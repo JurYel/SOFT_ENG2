@@ -364,28 +364,28 @@ div #details{
 
 
 .slick-track div:nth-child(3) a{
-    background-image: url(../movies/john\ wick\ 3.jpg);
+    background-image: url(../movies/john-wick-3.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .slick-track div:nth-child(4) a{
-    background-image: url(../movies/it\ 2.jpg);
+    background-image: url(../movies/it-2.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .slick-track div:nth-child(5) a{
-    background-image: url(../movies/guardians\ of\ the\ galaxy\ vol\ 2.jpg);
+    background-image: url(../movies/guardians-galaxy.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .slick-track div:nth-child(6) a{
-    background-image: url(../movies/money\ heist.jpg);
+    background-image: url(../movies/money-heist.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
