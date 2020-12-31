@@ -48,9 +48,6 @@ $(document).ready(function(){
 
     shopeeData = JSON.parse(shopeeData);
 
-    // console.log(shopeeData);
-    // console.log(lazadaData);
-
     var prod_id = new Array();
     var lazadaPrices = new Array();
     var shopeePrices = new Array();
@@ -60,10 +57,6 @@ $(document).ready(function(){
         lazadaPrices.push(Math.log(parseFloat(lazadaData[i]["price"])));
         shopeePrices.push(Math.log(parseFloat(shopeeData[i]["price"])));
     }
-
-    console.log(prod_id);
-    console.log(lazadaPrices);
-    console.log(shopeePrices);
 
     var lineChartData = {
         labels: prod_id,

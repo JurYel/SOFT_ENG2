@@ -63,14 +63,14 @@ plt.style.use('seaborn')
 
 fig1, ax1 = plt.subplots(1,1)
 
-ax1.plot(shopee['id'][:40], shopee['price'][:40], color='tab:red', linewidth='1.5',marker='o')
+ax1.plot(shopee['id'][:40], shopee['price'][:40], color='tab:red', linewidth='1.5',marker='o',label='Shopee Prices')
 ax1.set_xlabel('Products')
 ax1.set_ylabel('Shopee Prices', color='tab:red')
 ax1.tick_params(axis='y', labelcolor='tab:red')
 
 ax2 = ax1.twinx()
 
-ax2.plot(lazada['id'], lazada['price'], color='tab:blue',linewidth='1.5',marker='o')
+ax2.plot(lazada['id'], lazada['price'], color='tab:blue',linewidth='1.5',marker='o', label='Lazada Prices')
 ax2.set_ylabel('Lazada Price',color='tab:blue')
 ax2.tick_params(axis='y', labelcolor='tab:blue')
 
@@ -83,6 +83,8 @@ ax1.title.set_text('Mean(Lazada) = ' + "{:.3f}".format(lazada['price_log'].mean(
 fig1.canvas.set_window_title("Lazada vs Shopee")
 fig1.set_figheight(6)
 fig1.set_figwidth(8)
+
+plt.legend()
 
 move_figure(fig1,300,60)
 plt.tight_layout()
