@@ -11,7 +11,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+<<<<<<< HEAD
 import django_heroku
+=======
+>>>>>>> 02afccd363e798a01be8ddfd4334f84c8405e87c
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -170,6 +173,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+<<<<<<< HEAD
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
+=======
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+>>>>>>> 02afccd363e798a01be8ddfd4334f84c8405e87c
