@@ -11,8 +11,24 @@ All python dependencies are listed in the requirements.txt file
 If you are having a hard time installing the python dependencies from the requirements.txt file,
 this site may help; 
     https://stackoverflow.com/questions/35802939/install-only-available-packages-using-conda-install-yes-file-requirements-t
-    
-    
+
+# USER INTERFACE
+
+Home Page
+![Home Page](https://github.com/JurYel/SOFT_ENG2/blob/master/homepage.PNG)
+
+Movies Data Page
+![Movies](https://github.com/JurYel/SOFT_ENG2/blob/master/movies.PNG)
+
+Movies Data Scraped Data Sample
+![Scraped](https://github.com/JurYel/SOFT_ENG2/blob/master/scraped_data.PNG)
+
+Movies Data Visualization
+![Viz](https://github.com/JurYel/SOFT_ENG2/blob/master/visualization.PNG)
+
+Data Analysis
+![Analysis](https://github.com/JurYel/SOFT_ENG2/blob/master/analyses.PNG)
+
 # ABOUT THE SCRAPERS
 
 Scrapy framework is used for scraping data from indicated sources.
