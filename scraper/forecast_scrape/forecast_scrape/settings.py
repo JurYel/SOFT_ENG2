@@ -58,16 +58,6 @@ DOWNLOADER_MIDDLEWARES = {
    'rotating_proxies.middlewares.BanDetectionMiddleware': 800
 }
 
-<<<<<<< HEAD
-# DOWNLOADER_MIDDLEWARES = {
-#    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
-#    'forecast_scrape.middlewares.UserAgentRotatorMiddleware': 400,
-#    'rotating_proxies.middlewares.RotatingProxyMiddleware': 800,
-#    'rotating_proxies.middlewares.BanDetectionMiddleware': 800
-# }
-
-# ROTATING_PROXY_LIST_PATH = 'proxies.txt'
-=======
 # ROTATING_PROXY_LIST_PATH = 'proxies.txt'
 # ROTATING_PROXY_LIST = {
 #    '78.138.131.248:3128',
@@ -81,7 +71,6 @@ DOWNLOADER_MIDDLEWARES = {
 #    '92.115.102.133:55443',
 #    '180.250.12.10:80'
 # }
->>>>>>> scraper
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
